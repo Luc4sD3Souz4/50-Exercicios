@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <windows.h>
+
+/* 33.  Escreva um algoritmo que leia 2 valores (x e y), que devem representar as coordenadas de um ponto em um plano. 
+A seguir, determine qual o quadrante ao qual pertence o ponto, ou se está sobre um dos eixos cartesianos ou na origem (x=y=0). */
+
+main(){
+	float x, y;
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("Escreva o valor de X: ");
+	scanf("%f",&x);
+	printf("Escreva o valor de Y: ");
+	scanf("%f",&y);
+	system("cls");
+	
+	if (x > 0 && y > 0) {
+		printf("Primeiro quadrante!");
+	} else
+	if (x < 0 && y > 0) {
+		printf("Segundo quadrante!");
+	} else
+	if (x < 0 && y < 0) {
+		printf("Terceiro quadrante!");
+	} else
+	if (x > 0 && y < 0) {
+		printf("Quarto quadrante!");
+	} else 
+	if (x == 0 && y == 0) {
+		printf("Ponto de origem!");
+	} else 
+	if (x != 0 && y == 0) {
+		printf("Eixo X!");
+	} else 
+	if (x == 0 && y != 0) {
+		printf("Eixo Y!");
+	}
+	return 0;
+}
