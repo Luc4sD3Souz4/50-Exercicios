@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//26. Escreva um programa que leia 3 valores e escreva a soma dos 2 maiores.
+
+int main(){
+
+int numero1, numero2, numero3;
+int menor =0;
+int doismaiores;
+int soma;
+int maior1, maior2;
+maior1 = 0;
+maior2 = 0;
+
+printf("Digite tres numeros: \n");
+scanf("%d %d %d", &numero1, &numero2, &numero3);
+
+if (numero1 > numero2 || numero1 > numero3){
+	printf ("O numero %d eh um dos maiores\n", numero1);
+	doismaiores = numero1;
+	maior1 = numero1;
+}
+
+if (numero2 > numero1 || numero2 > numero3){
+	printf ("O numero %d eh um dos maiores\n", numero2);
+	doismaiores = numero2;
+	
+	if (maior1 > 0) {
+		maior2 = numero2;
+	} else 
+	{
+		maior1 = numero2;
+	}
+}
+
+if (numero3 > numero1 || numero3 > numero2){
+	printf ("O numero %d eh um dos maiores\n", numero3);
+	doismaiores = numero3;
+	
+	if (maior1 > 0) {
+		maior2 = numero3;
+	} else {
+		maior1 = numero3;
+	}
+	
+} else 
+if (numero1 == numero2 && numero1 == numero3){
+	printf ("O numero %d eh um dos maiores\n", numero1);
+	printf ("O numero %d eh um dos maiores\n", numero1);
+	doismaiores = numero3;
+	maior1 = numero1;
+	maior2 = numero1;
+}
+
+soma = maior1 + maior2;
+
+printf ("A soma dos maiores eh %d \n", soma);
+
+system ("pause");
+return 0;
+}
